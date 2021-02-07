@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h1 class="form-signin-heading"></h1>
+
+      <div class="form-horizontal"fxLayout="row" fxLayoutAlign=" center none">
+       <mat-card>
+         <div class="form-group" >
+          <h4>Welcome <span>{{ details?.name}}</span></h4>
+        </div>
+        <a class="aa"routerLink="/sample"> Profile Settings</a><br>
+        <a class="aa" routerLink="/emp">Create Profile</a>
+      </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<mat-card>
+  <h3>Manage your projects here</h3>
+
+<span ><a routerLink="/newpro">Add your project</a></span>
+<mat-card fxLayout="row" fxLayoutAlign="space-around center" *ngFor="let list of lists ;let b of id"><h3>{{list.title}}</h3>
+<input #m type="number" name="enter" value="">
+<button mat-button type="submit" name="button" (click)="sf()">Submit</button>
+  <circle-progress
+  [percent]="m.value"
+  [radius]="50"
+  [outerStrokeWidth]="16"
+  [innerStrokeWidth]="8"
+  [outerStrokeColor]="'#78C000'"
+
+  [innerStrokeColor]="'#C7E596'"
+  [animation]="true"
+  [animationDuration]="300"
+></circle-progress></mat-card>
+</mat-card>

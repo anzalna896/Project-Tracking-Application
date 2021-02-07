@@ -1,0 +1,16 @@
+mat-tab{
+    justify-content: center;
+}
+
+mat-card{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.avatar {
+  vertical-align: middle;
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  margin : 2em;
+}

@@ -1,0 +1,39 @@
+<mat-card class="card">
+<div>
+  <div>
+  <h3 style="font-weight: 500;text-align: center;">PROJECTS WORKED</h3>
+</div>
+
+<div class="proj">
+<mat-form-field appearance="outlined">
+  <mat-label>Project </mat-label>
+  <input #inputt matInput placeholder="Project name" value="">
+</mat-form-field>
+<mat-form-field appearance="outlined">
+  <mat-label>Select Language</mat-label>
+  <mat-select #inp>
+    <mat-option value="react">React</mat-option>
+    <mat-option value="ang">Angular</mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field appearance="outlined">
+  <mat-label>Status</mat-label>
+  <input #in matInput placeholder="Progress" value="">
+</mat-form-field>
+</div>
+<!--<div class="input">
+  <input #inputt matInput placeholder="Project name" value="">
+
+    <select name="cars" #inp>
+    <option value="Angular">Angular</option>
+    <option value="React">react</option>
+
+  </select>
+      <input #in matInput placeholder="progr" value="">
+</div>-->
+<div >
+<button mat-raised-button color="primary" class="buttons" type="button" name="button" (click)="createPro(inputt.value,inp.value,in.value)">Add Project</button>
+<button mat-raised-button color="primary" class="buttons" type="button" routerLink='/profile'>back</button>
+</div>
+</div>
+</mat-card>

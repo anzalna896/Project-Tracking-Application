@@ -1,0 +1,19 @@
+<mat-toolbar class="toolbar">
+  <div fxHide.gt-xs>
+      <button mat-icon-button (click)="onToggleSidenav()">
+          <mat-icon class="icon">menu</mat-icon>
+      </button>
+  </div>
+  <div>
+      <a routerLink="/" class="tools">PROJECT TRACKING APPLICATION</a>
+      <a routerLink="/dash" class="tools">DASHBOARD</a>
+      <a routerLink="/team" class="tools">TEAMS</a>
+  </div>
+  <span class="example-spacer"></span>
+
+             
+                          <!--  <a routerLink="/login" class="tools">LOGIN</a>
+
+              <a routerLink="/register" class="tools">SIGNUP</a>-->
+            <a *ngIf="auth.isLoggedIn()" (click)="auth.logout()" class="tools">Logout</a>
+</mat-toolbar>

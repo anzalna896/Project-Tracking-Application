@@ -1,0 +1,40 @@
+a {
+    text-decoration: none;
+    color: white;
+}
+
+mat-icon-button-focus-overlay {
+  background-color: transparent;
+}
+.icon:focus{
+    background-color: transparent;
+}
+.icon{
+    color: white;
+}
+.toolbar{
+    background-color:#5995fd;
+}
+a:hover, a:active{
+    color: lightgray;
+}
+
+.navigation-items{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+.tools{
+    font-size: small;
+    margin-left: 2em;
+}
+
+@media(max-width: 959px){
+    mat-toolbar{
+        border-radius: 0px;
+    }
+}

@@ -1,0 +1,45 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="margin-top: 1em;">
+
+ <ng-container matColumnDef="position">
+   <th class="contents" mat-header-cell *matHeaderCellDef><h2>No.</h2></th>
+   <td data-label="No" mat-cell *matCellDef="let element"> {{element.position}} </td>
+ </ng-container>
+
+ <ng-container matColumnDef="task">
+   <th class="contents" mat-header-cell *matHeaderCellDef> <h2>Task</h2> </th>
+   <td data-label="Task" mat-cell *matCellDef="let element"> {{element.task}} </td>
+ </ng-container>
+
+ <ng-container matColumnDef="enddate">
+   <th class="contents" mat-header-cell *matHeaderCellDef> <h2>End Date</h2> </th>
+   <td data-label="End Date" mat-cell *matCellDef="let element">{{element.enddate}}
+        </td>
+ </ng-container>
+
+ <ng-container matColumnDef="status">
+   <th class="contents" mat-header-cell *matHeaderCellDef><h2> Status</h2> </th>
+   <td data-label="Status" mat-cell *matCellDef="let element">{{element.status}}
+    
+     </td>
+ </ng-container>
+   <!-- Progress Column -->
+   <ng-container matColumnDef="progress">
+     <th class="contents" mat-header-cell *matHeaderCellDef><h2>Progress</h2>  </th>
+     <td data-label="Progress" mat-cell *matCellDef="let element">
+     <mat-progress-spinner
+       diameter="40"
+       class="example-margin"
+       [value]="element.progress">
+   </mat-progress-spinner>  {{element.progress}}%</td>
+   </ng-container>
+     <!-- Assigness Column -->
+ <ng-container matColumnDef="assigness">
+   <th class="contents" mat-header-cell *matHeaderCellDef> <h2>Assigners</h2> </th>
+   <td data-label="Assigness" mat-cell *matCellDef="let element">
+     <img [src]="element.assigness" alt="Avatar" class="avatar">
+     <!-- <img [src]="anzalna" alt="Avatar" class="avatar">  -->
+   </td>
+ </ng-container>
+ <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+ <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

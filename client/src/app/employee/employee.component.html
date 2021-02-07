@@ -1,0 +1,235 @@
+<mat-card class="card">
+   <div *ngIf="!test">
+ <div>
+  <h3 style="font-weight: 500;text-align: center;">CHANGE PROFILE</h3>
+</div>
+    <form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)" class="fo">
+            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="employeeService.selectedEmployee._id"> 
+      <mat-form-field appearance="outlined">
+         <input matInput type="text" name="office" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.office" placeholder="Username">
+         <mat-icon matSuffix>perm_identity</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outlined">
+        <input matInput type="text" name="designation" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.designation" placeholder="WebDeveloper">
+        <mat-icon matSuffix>label</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outlined">
+        <input matInput type="text" name="team" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.team" placeholder="Team">
+        <mat-icon matSuffix>assignment_ind</mat-icon>
+      </mat-form-field>
+
+ 
+    <div class="ps2">
+      <mat-form-field appearance="outlined">
+        <input matInput type="text" name="phone" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.phone" placeholder="Phone number">
+        <mat-icon matSuffix>widgets</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outlined">
+        <input matInput matInput type="text" name="position" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.position" placeholder="Male,Female or Others">
+        <mat-icon matSuffix>perm_identity</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outlined">
+       <input matInput type="text" name="name" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.name" placeholder="Location" required>
+       <mat-icon matSuffix>person_pin_circle</mat-icon>
+      </mat-form-field>
+    </div>
+
+<div class="ps">
+<form [formGroup]="form" (submit)="onSubmitNN()" class="avatar">
+  <div>
+    <input (change)="onFileSelect($event)" type="file" />
+  </div>
+  <div *ngIf="imageData">
+    <img   [src]="imageData" [alt]="form.value.name" class="test"/>
+  </div>
+  <div>
+    <button type="submit">Upload profile pic</button>
+  </div>
+</form>
+    </div>
+
+
+      <div class="ps3">
+      <mat-form-field appearance="outlined">
+        <input matInput type="text" name="phone" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.phone" placeholder="Phone number">
+        <mat-icon matSuffix>phone</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outlined">
+        <input matInput type="text" name="email" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.email" placeholder="Email">
+        <mat-icon matSuffix>email</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outlined">
+        <input matInput type="text" name="cid" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.cid" placeholder="ID">
+        <mat-icon matSuffix>assignment_ind</mat-icon>
+      </mat-form-field>
+      </div>
+
+      <div>
+      <button mat-raised-button color="primary" class="button" type="button" (click)="resetForm(employeeForm)">RESET</button>
+      <button mat-raised-button color="primary" class="button" type="submit" [disabled]="!employeeForm.valid">CREATE</button>
+      </div>
+      </form>
+</div>
+
+        <div class="" *ngIf="test">
+            <div class="row" *ngFor="let emp of employeeService.employees" fxLayout="Column wrap">
+              <mat-card>
+
+                 <div class="ps">
+      <td>
+        <div *ngIf="profiles.length > 0">
+                    <div *ngFor="let profile of (profiles|slice:-1)">
+                    <img  class="avatar" [src]="profile.imagePath" [alt]="profile.name"/>
+                    <div>
+
+                    </div> 
+      </td>
+      <table class="example-full-width" cellspacing="0">
+        <colgroup>
+          <col span="2" style="background-color:white">
+          <col span="2" style="background-color:white">
+          <col span="2" style="background-color:white">
+          <col span="2" style="background-color:white">
+        </colgroup>
+        <tr>
+          <td>
+            <mat-label class="contents">User Name</mat-label>
+          </td>
+          <td data-label="User Name">
+            <mat-label > : {{emp.office}}</mat-label>
+          </td >
+         
+          <td>
+            <mat-label class="contents">Designation</mat-label>
+          </td>
+          <td data-label="Destination">
+            <mat-label> : {{emp.designation}}</mat-label>
+          </td>
+          <td>
+            <mat-label class="contents">Gender</mat-label>
+          </td>
+          <td data-label="Gender">
+            <mat-label> : {{emp.position}}</mat-label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-label class="contents">Team </mat-label>
+          </td>
+          <td data-label="Team">
+            <mat-label> : {{emp.team}}</mat-label>
+          </td>
+          <td>
+            <mat-label class="contents">Company ID </mat-label>
+          </td>
+          <td data-label="Company ID">
+            <mat-label> : {{emp.office}} </mat-label>
+          </td>
+          <td>
+            <mat-label class="contents">E-mail </mat-label>
+          </td>
+          <td data-label="E-mail">
+            <mat-label> : {{emp.email}}</mat-label>
+          </td>
+          <td>
+            <mat-label class="contents">Mobile No </mat-label>
+          </td>
+          <td data-label="Mobile No">
+            <mat-label> : {{emp.phone}}</mat-label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-label class="contents">Location </mat-label>
+          </td>
+          <td data-label="Location">
+            <mat-label> : {{emp.name}}</mat-label>
+          </td>
+          <td>
+            <mat-label class="contents">Date of Join </mat-label>
+          </td>
+          <td data-label="Date of Join">
+            <mat-label> : {{emp.salary}}</mat-label>
+          </td>
+        </tr>
+        </table>
+    </div>  
+
+
+
+
+
+
+
+
+
+              
+                    </div>
+<!--          </div>
+                <div  fxLayout="row" fxLayoutAlign="space-evenly center" >
+                  <div class="f">
+                    Name:{{emp.office}}
+                  </div>
+                  <div class="fb">
+                      <mat-icon matSuffix>assignment_ind</mat-icon>
+                      Designation:{{emp.designation}}
+                  </div>
+                </div>
+
+                <div class="" fxLayout="row" fxLayoutAlign="space-evenly center" >
+                  <div class="fb">
+                              <mat-icon matSuffix>widgets</mat-icon>Team:{{emp.team}}
+                  </div>
+                <div class="f">
+                  Date of join:{{emp.salary}}
+                </div>
+                  </div>
+
+              <div class="" fxLayout="row" fxLayoutAlign="space-evenly center" >
+                <div class="f">
+                  Gender:{{emp.position}}
+                </div>
+        
+                <div class="f">
+                    <mat-icon matSuffix>person_pin_circle</mat-icon>Location:{{emp.name}}
+                </div>
+              </div>
+
+<div class=""  fxLayout="row" fxLayoutAlign="space-evenly center">
+  <div class="f">
+      <mat-icon matSuffix>phone</mat-icon>Phone:{{emp.phone}}
+  </div><div class="f">
+     <mat-icon matSuffix>email</mat-icon>Email:{{emp.email}}
+  </div>
+
+</div>
+<div class=""  fxLayout="row" fxLayoutAlign="space-evenly center">
+
+</div>-->
+
+              <div class="">
+                <a class="action-btn" (click)="onEdit(emp)">
+                  <i class="material-icons">edit</i>
+                </a>
+                <a class="action-btn" (click)="onDelete(emp)">
+                  <i class="material-icons">delete</i>
+                </a>
+              </div>
+
+</div>
+</div>
+
+<div class="" *ngIf="employeeService.employees==null">
+     <button  mat-mini-fab color="primary" aria-label="Example icon button with a menu icon" name="button" (click)="f()">
+          <mat-icon>add</mat-icon>
+      </button>Create Profile
+
+</div>
+
+</mat-card>
