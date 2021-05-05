@@ -75,21 +75,19 @@
       <button mat-raised-button color="primary" class="button" type="submit" [disabled]="!employeeForm.valid">CREATE</button>
       </div>
       </form>
-</div>
+</div>     
 
-        <div class="" *ngIf="test">
-            <div class="row" *ngFor="let emp of employeeService.employees" fxLayout="Column wrap">
-              <mat-card>
+  <div class="ps">
+    <div class="row" *ngFor="let emp of employeeService.employees" fxLayout="Column wrap">
 
-                 <div class="ps">
-      <td>
-        <div *ngIf="profiles.length > 0">
-                    <div *ngFor="let profile of (profiles|slice:-1)">
-                    <img  class="avatar" [src]="profile.imagePath" [alt]="profile.name"/>
-                    <div>
-
-                    </div> 
-      </td>
+           <td>
+                  <div *ngIf="profiles.length > 0">
+                     <div *ngFor="let profile of (profiles|slice:-1)">
+                          <img  class="avatar" [src]="profile.imagePath" [alt]="profile.name"/>
+                     </div>
+                  </div>
+            </td>
+         
       <table class="example-full-width" cellspacing="0">
         <colgroup>
           <col span="2" style="background-color:white">
@@ -97,25 +95,31 @@
           <col span="2" style="background-color:white">
           <col span="2" style="background-color:white">
         </colgroup>
+
         <tr>
           <td>
             <mat-label class="contents">User Name</mat-label>
           </td>
           <td data-label="User Name">
-            <mat-label > : {{emp.office}}</mat-label>
+            <mat-label > : raseelpu</mat-label>
           </td >
-         
           <td>
-            <mat-label class="contents">Designation</mat-label>
+            <mat-label class="contents">Name</mat-label>
+          </td>
+          <td data-label="Name">
+            <mat-label> : RASEEL P U</mat-label>
+          </td>
+          <td>
+            <mat-label class="contents">Destination</mat-label>
           </td>
           <td data-label="Destination">
-            <mat-label> : {{emp.designation}}</mat-label>
+            <mat-label> : Web Developer</mat-label>
           </td>
           <td>
             <mat-label class="contents">Gender</mat-label>
           </td>
           <td data-label="Gender">
-            <mat-label> : {{emp.position}}</mat-label>
+            <mat-label> : Male</mat-label>
           </td>
         </tr>
         <tr>
@@ -123,25 +127,25 @@
             <mat-label class="contents">Team </mat-label>
           </td>
           <td data-label="Team">
-            <mat-label> : {{emp.team}}</mat-label>
+            <mat-label> : Team name</mat-label>
           </td>
           <td>
             <mat-label class="contents">Company ID </mat-label>
           </td>
           <td data-label="Company ID">
-            <mat-label> : {{emp.office}} </mat-label>
+            <mat-label> : </mat-label>
           </td>
           <td>
             <mat-label class="contents">E-mail </mat-label>
           </td>
           <td data-label="E-mail">
-            <mat-label> : {{emp.email}}</mat-label>
+            <mat-label> : raseel@gmail.com</mat-label>
           </td>
           <td>
             <mat-label class="contents">Mobile No </mat-label>
           </td>
           <td data-label="Mobile No">
-            <mat-label> : {{emp.phone}}</mat-label>
+            <mat-label> : 9656935598</mat-label>
           </td>
         </tr>
         <tr>
@@ -149,87 +153,36 @@
             <mat-label class="contents">Location </mat-label>
           </td>
           <td data-label="Location">
-            <mat-label> : {{emp.name}}</mat-label>
+            <mat-label> : Malappuram</mat-label>
           </td>
           <td>
             <mat-label class="contents">Date of Join </mat-label>
           </td>
           <td data-label="Date of Join">
-            <mat-label> : {{emp.salary}}</mat-label>
+            <mat-label> : 05/10/2020</mat-label>
           </td>
         </tr>
         </table>
-    </div>  
-
-
-
-
-
-
-
-
-
-              
-                    </div>
-<!--          </div>
-                <div  fxLayout="row" fxLayoutAlign="space-evenly center" >
-                  <div class="f">
-                    Name:{{emp.office}}
-                  </div>
-                  <div class="fb">
-                      <mat-icon matSuffix>assignment_ind</mat-icon>
-                      Designation:{{emp.designation}}
-                  </div>
-                </div>
-
-                <div class="" fxLayout="row" fxLayoutAlign="space-evenly center" >
-                  <div class="fb">
-                              <mat-icon matSuffix>widgets</mat-icon>Team:{{emp.team}}
-                  </div>
-                <div class="f">
-                  Date of join:{{emp.salary}}
-                </div>
-                  </div>
-
-              <div class="" fxLayout="row" fxLayoutAlign="space-evenly center" >
-                <div class="f">
-                  Gender:{{emp.position}}
-                </div>
-        
-                <div class="f">
-                    <mat-icon matSuffix>person_pin_circle</mat-icon>Location:{{emp.name}}
-                </div>
-              </div>
-
-<div class=""  fxLayout="row" fxLayoutAlign="space-evenly center">
-  <div class="f">
-      <mat-icon matSuffix>phone</mat-icon>Phone:{{emp.phone}}
-  </div><div class="f">
-     <mat-icon matSuffix>email</mat-icon>Email:{{emp.email}}
-  </div>
-
-</div>
-<div class=""  fxLayout="row" fxLayoutAlign="space-evenly center">
-
-</div>-->
-
-              <div class="">
-                <a class="action-btn" (click)="onEdit(emp)">
+ 
+              <!--<div class="">
+                <a class="action-btn" (click)="onEdit()">
                   <i class="material-icons">edit</i>
                 </a>
-                <a class="action-btn" (click)="onDelete(emp)">
+                <a class="action-btn" (click)="onDelete()">
                   <i class="material-icons">delete</i>
                 </a>
-              </div>
+              </div>-->
+            
 
 </div>
 </div>
+</mat-card>
 
 <div class="" *ngIf="employeeService.employees==null">
      <button  mat-mini-fab color="primary" aria-label="Example icon button with a menu icon" name="button" (click)="f()">
           <mat-icon>add</mat-icon>
-      </button>Create Profile
-
+      </button>
+      Create Profile
 </div>
 
-</mat-card>
+

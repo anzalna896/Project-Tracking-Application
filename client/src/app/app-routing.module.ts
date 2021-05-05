@@ -15,10 +15,10 @@ import { AuthGuard } from "./auth.guard";
 
 
 const routes: Routes = [
-  { path: "", component: LoginComponent },
+  { path: "logins", component: LoginComponent },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
-  { path: "sample", component: SampleComponent },
+  { path: "", component: SampleComponent },
   { path: "emp", component: EmployeeComponent },
   { path: "newpro", component: NewProComponent },
   { path: "team", component: TeamComponent },
